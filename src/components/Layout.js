@@ -8,8 +8,23 @@ const Layout = (props) => {
         <h2>My Drive</h2>
       </div>
 
-      {props.data.folders && <FolderSection folders={props.data.folders} />}
-      {props.data.files && <FilesSection files={props.data.files} />}
+      {/* Folders */}
+      {props.data.folders && (
+        <FolderSection
+          folders={props.data.folders.filter(
+            (item) => item.location === props.location
+          )}
+        />
+      )}
+
+      {/* Files */}
+      {props.data.files && (
+        <FilesSection
+          files={props.data.files.filter(
+            (item) => item.location === props.location
+          )}
+        />
+      )}
     </>
   );
 };

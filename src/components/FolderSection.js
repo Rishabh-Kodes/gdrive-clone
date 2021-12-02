@@ -2,7 +2,7 @@ import { useState } from "react";
 import Folder from "./Folder";
 
 const FolderSection = (props) => {
-  const [showCreateFolder, setShowCreateFolder] = useState(true);
+  const [showCreateFolder, setShowCreateFolder] = useState(false);
   const [folderName, setFolderName] = useState("");
 
   const handleCancel = () => {
@@ -10,7 +10,6 @@ const FolderSection = (props) => {
   };
 
   const handelCreate = () => {
-    console.log(folderName);
     setShowCreateFolder(false);
   };
 
