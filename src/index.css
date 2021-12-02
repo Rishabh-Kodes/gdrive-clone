@@ -22,6 +22,12 @@ button {
   background: #5d5cdf;
   padding: 10px 15px;
   cursor: pointer;
+  font-weight: 600;
+}
+
+button.btn-white {
+  background: white;
+  color: #202124;
 }
 
 section {
@@ -44,6 +50,10 @@ section {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.section-header > Button {
+  min-width: 18ch;
 }
 
 .section-title {
@@ -94,4 +104,51 @@ section {
   border: 1px solid #cdcfd3;
   border-bottom: 0;
   border-radius: 7px 7px 0 0;
+}
+
+.modal {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.72);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.create-folder {
+  background: #fff;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.create-folder > .title {
+  font-weight: 600;
+  color: #202124;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.create-folder > input[type="text"] {
+  padding: 7px;
+  width: 300px;
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+}
+
+.create-folder > .buttons {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.create-folder > .buttons > button {
+  font-size: 0.95rem;
+  padding: 0;
+}
+
+button.create-btn {
+  color: #5d5cdf;
 }
