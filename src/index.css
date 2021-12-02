@@ -1,13 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;700&display=swap");
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Open Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+button {
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  background: #5d5cdf;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+section {
+  padding: 20px;
+}
+
+.app-title {
+  padding: 20px;
+  border-bottom: 1px solid #cdcfd3;
+}
+
+.app-title > h2 {
+  font-weight: 700;
+  color: #202124;
+}
+
+.section-header {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.section-title {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: #5f6368;
+}
+
+.drive-folders {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.folder {
+  border: 1px solid #cdcfd3;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 15px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.folder-icon {
+  display: inline-block;
+}
+
+.folder-icon > svg {
+  height: 25px;
+}
+
+.folder-name {
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.72);
+  font-size: 0.9rem;
 }
