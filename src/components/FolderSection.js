@@ -25,11 +25,15 @@ const FolderSection = (props) => {
             </button>
           </div>
 
-          <div className="grid-6">
-            {props.folders.map((item, index) => (
-              <Folder data={item} key={index} />
-            ))}
-          </div>
+          {props.folders.lenght > 0 ? (
+            <div className="grid-6">
+              {props.folders.map((item, index) => (
+                <Folder data={item} key={index} />
+              ))}
+            </div>
+          ) : (
+            <p class="no-files">No folders</p>
+          )}
         </section>
 
         {showCreateFolder && (

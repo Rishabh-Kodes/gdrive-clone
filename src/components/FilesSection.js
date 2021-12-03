@@ -10,11 +10,15 @@ const FilesSection = (props) => {
           <button>Upload File</button>
         </div>
 
-        <div className="grid-6">
-          {props.files.map((item, index) => (
-            <File data={item} key={index} />
-          ))}
-        </div>
+        {props.files.length > 0 ? (
+          <div className="grid-6">
+            {props.files.map((item, index) => (
+              <File data={item} key={index} />
+            ))}
+          </div>
+        ) : (
+          <p class="no-files">No files</p>
+        )}
       </section>
     )
   );

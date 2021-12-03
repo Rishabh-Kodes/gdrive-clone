@@ -13,6 +13,14 @@ body {
   box-sizing: border-box;
 }
 
+a,
+a:hover,
+a:focus,
+a:active {
+  color: inherit;
+  text-decoration: none;
+}
+
 button {
   color: #fff;
   font-weight: 500;
@@ -151,4 +159,11 @@ section {
 
 button.create-btn {
   color: #5d5cdf;
+}
+
+.no-files {
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 20px 0;
+  color: rgba(0, 0, 0, 0.25);
 }

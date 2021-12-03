@@ -1,4 +1,6 @@
 import Layout from "./components/Layout";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 const App = () => {
   let driveData = {
     folders: [
@@ -16,7 +18,16 @@ const App = () => {
     ],
   };
 
-  return <Layout data={driveData} location={0} />;
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout data={driveData} root={true} />} />
+        <Route path="/:id" element={<Layout data={driveData} />} />
+        {/* <Route path="expenses" element={<Expenses />} />
+        <Route path="invoices" element={<Invoices />} /> */}
+      </Routes>
+    </BrowserRouter>
+  );
 };
 
 export default App;
