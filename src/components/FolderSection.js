@@ -25,7 +25,7 @@ const FolderSection = (props) => {
             </button>
           </div>
 
-          {props.folders.lenght > 0 ? (
+          {props.folders.length > 0 ? (
             <div className="grid-6">
               {props.folders.map((item, index) => (
                 <Folder data={item} key={index} />
