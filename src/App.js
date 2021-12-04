@@ -1,5 +1,5 @@
 import Layout from "./components/Layout";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { fileActions } from "./actions/fileActions";
 import { useSelector, useDispatch } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
