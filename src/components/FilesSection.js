@@ -17,7 +17,7 @@ const FilesSection = (props) => {
             ))}
           </div>
         ) : (
-          <p class="no-files">No files</p>
+          <p className="no-files">No files</p>
         )}
       </section>
     )

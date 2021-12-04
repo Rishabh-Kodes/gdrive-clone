@@ -32,7 +32,7 @@ const FolderSection = (props) => {
               ))}
             </div>
           ) : (
-            <p class="no-files">No folders</p>
+            <p className="no-files">No folders</p>
           )}
         </section>
 
