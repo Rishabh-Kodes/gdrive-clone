@@ -20,6 +20,7 @@ const Layout = (props) => {
           folders={props.data.folders.filter(
             (item) => item.location === location
           )}
+          location={location}
         />
       )}
 

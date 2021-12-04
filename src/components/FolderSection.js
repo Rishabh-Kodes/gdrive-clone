@@ -1,9 +1,13 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { fileActions } from "../actions/fileActions";
 import Folder from "./Folder";
 
 const FolderSection = (props) => {
   const [showCreateFolder, setShowCreateFolder] = useState(false);
   const [folderName, setFolderName] = useState("");
+
+  const dispatch = useDispatch();
 
   const handleCancel = () => {
     setShowCreateFolder(false);
@@ -11,6 +15,10 @@ const FolderSection = (props) => {
 
   const handelCreate = () => {
     setShowCreateFolder(false);
+    dispatch(
+      fileActions.createFolder({ name: folderName, _id: props.location })
+    );
+    setFolderName("");
   };
 
   return (

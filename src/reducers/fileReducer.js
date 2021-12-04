@@ -7,7 +7,9 @@ const initialState = {
 export function fileReducer(state = initialState, action) {
   switch (action.type) {
     case fileConstants.GET_FILES_SUCCESS:
+    case fileConstants.CREATE_FOLDER_SUCCESS:
       return { driveData: action.data };
+
     default:
       return state;
   }

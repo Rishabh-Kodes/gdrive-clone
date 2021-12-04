@@ -23,7 +23,10 @@ const getFiles = () => {
 
 const createFolder = (data) => {
   return (dispatch) => {
-    const driveData = JSON.parse(localStorage.getItem("driveData"));
+    const driveData = JSON.parse(localStorage.getItem("driveData")) || {
+      folders: [],
+      files: [],
+    };
     const newFolder = {
       id: Date.now(),
       name: data.name,
@@ -31,8 +34,9 @@ const createFolder = (data) => {
     };
 
     driveData.folders.push(newFolder);
+    localStorage.setItem("driveData", JSON.stringify(driveData));
 
-    dispatch(success(newFolder));
+    dispatch(success(driveData));
   };
 
   function success(data) {

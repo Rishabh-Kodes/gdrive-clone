@@ -1,4 +1,5 @@
 import Layout from "./components/Layout";
+import { useState, useEffect } from "react";
 import { fileActions } from "./actions/fileActions";
 import { useSelector, useDispatch } from "react-redux";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
@@ -20,10 +21,15 @@ const App = () => {
   //   ],
   // };
 
-  const dispatch = useDispatch();
-  dispatch(fileActions.getFiles());
+  // localStorage.setItem("driveData", JSON.stringify(driveData));
 
   const driveData = useSelector((state) => state.driveData);
+
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(fileActions.getFiles());
+  }, [dispatch]);
 
   return (
     <BrowserRouter>
