@@ -28,6 +28,7 @@ const Folder = (props) => {
     <Link to={`/${props.data.id}`}>
       <div
         className="folder"
+        title={props.data.name}
         draggable
         onDragOver={(e) => e.preventDefault()}
         onDrop={(e) => handleOnDrop(e, props.data.id)}

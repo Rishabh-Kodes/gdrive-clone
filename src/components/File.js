@@ -35,6 +35,7 @@ const File = (props) => {
     >
       <div
         className="file"
+        title={props.data.name}
         draggable
         onDragStart={(e) => handleOnDragStart(e, props.data.id)}
       >

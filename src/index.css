@@ -86,7 +86,7 @@ section {
 
 .grid-6 {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(6, minmax(0, 1fr));
   gap: 20px;
 }
 
@@ -113,6 +113,8 @@ section {
   font-weight: 600;
   color: rgba(0, 0, 0, 0.72);
   font-size: 0.9rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .file-head {
