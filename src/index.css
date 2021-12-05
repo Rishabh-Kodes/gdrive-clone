@@ -123,11 +123,22 @@ section {
 }
 
 .file-thumbnail {
+  position: relative;
   padding-top: 85%;
   width: 100%;
   border: 1px solid #cdcfd3;
   border-bottom: 0;
   border-radius: 7px 7px 0 0;
+  overflow: hidden;
+}
+
+.file-thumbnail > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
 }
 
 .modal {

@@ -39,7 +39,13 @@ const File = (props) => {
         draggable
         onDragStart={(e) => handleOnDragStart(e, props.data.id)}
       >
-        <div className="file-thumbnail"></div>
+        <div className="file-thumbnail">
+          {props.data.type.split("/")[0] === "image" ? (
+            <img src={props.data.data} alt={props.data.name} />
+          ) : (
+            <img src="/file.png" alt={props.data.name} />
+          )}
+        </div>
         <div className="file-head">
           <div className="file-icon">
             <svg
