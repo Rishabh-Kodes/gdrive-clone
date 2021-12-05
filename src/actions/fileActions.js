@@ -51,6 +51,7 @@ const uploadFile = (data) => {
       id: Date.now(),
       name: data.name,
       data: data.file,
+      type: data.type || "",
       location: data.location,
     };
 

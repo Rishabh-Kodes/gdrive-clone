@@ -17,12 +17,11 @@ const FilesSection = (props) => {
   const imageUpload = (e) => {
     const file = e.target.files[0];
     getBase64(file).then((base64) => {
-      console.log("file", base64);
-      console.log(file);
       dispatch(
         fileActions.uploadFile({
           name: file.name,
           file: base64,
+          type: file.type,
           location: props.location,
         })
       );
