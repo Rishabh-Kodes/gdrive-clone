@@ -143,6 +143,7 @@ section {
 
 .modal {
   position: absolute;
+  z-index: 999;
   inset: 0;
   background: rgba(0, 0, 0, 0.72);
   display: flex;
