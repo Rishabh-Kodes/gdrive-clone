@@ -1,8 +1,22 @@
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { driveUtils } from "../utils/driveUtils";
+import { fileActions } from "../actions/fileActions";
 
 const Folder = (props) => {
+  const dispatch = useDispatch();
+
   const handleOnDrop = (e, folderId) => {
     let _id = e.dataTransfer.getData("_id");
+    let type = e.dataTransfer.getData("type");
+
+    if (type === "file") {
+      driveUtils.moveFile(_id, folderId);
+    } else if (type === "folder") {
+      driveUtils.moveFolder(_id, folderId);
+    }
+
+    dispatch(fileActions.getFiles());
   };
 
   const handleOnDragStart = (e, id) => {
