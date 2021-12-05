@@ -1,4 +1,5 @@
 import { fileConstants } from "../constants/fileConstancts";
+import { driveUtils } from "../utils/driveUtils";
 
 const getFiles = () => {
   return (dispatch) => {
@@ -23,10 +24,8 @@ const getFiles = () => {
 
 const createFolder = (data) => {
   return (dispatch) => {
-    const driveData = JSON.parse(localStorage.getItem("driveData")) || {
-      folders: [],
-      files: [],
-    };
+    const driveData = driveUtils.getDriveData();
+
     const newFolder = {
       id: Date.now(),
       name: data.name,
@@ -44,7 +43,31 @@ const createFolder = (data) => {
   }
 };
 
+const uploadFile = (data) => {
+  return (dispatch) => {
+    const driveData = driveUtils.getDriveData();
+
+    const newFile = {
+      id: Date.now(),
+      name: data.name,
+      data: data.file,
+      location: data.location,
+    };
+
+    driveData.files.push(newFile);
+    console.log(driveData);
+    localStorage.setItem("driveData", JSON.stringify(driveData));
+
+    dispatch(success(driveData));
+  };
+
+  function success(data) {
+    return { type: fileConstants.UPLOAD_FILE_SUCCESS, data };
+  }
+};
+
 export const fileActions = {
   getFiles,
   createFolder,
+  uploadFile,
 };

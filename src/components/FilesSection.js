@@ -1,6 +1,10 @@
+import { useDispatch } from "react-redux";
+import { fileActions } from "../actions/fileActions";
 import File from "./File";
 
 const FilesSection = (props) => {
+  const dispatch = useDispatch();
+
   const getBase64 = (file) => {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -14,8 +18,17 @@ const FilesSection = (props) => {
     const file = e.target.files[0];
     getBase64(file).then((base64) => {
       console.log("file", base64);
+      console.log(file);
+      dispatch(
+        fileActions.uploadFile({
+          name: file.name,
+          file: base64,
+          location: props.location,
+        })
+      );
     });
   };
+
   return (
     props.files && (
       <section>

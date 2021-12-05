@@ -1,3 +1,12 @@
+const getDriveData = () => {
+  const driveData = JSON.parse(localStorage.getItem("driveData")) || {
+    folders: [],
+    files: [],
+  };
+
+  return driveData;
+};
+
 const moveFile = (fileId, folderId) => {
   const driveData = JSON.parse(localStorage.getItem("driveData"));
 
@@ -13,4 +22,4 @@ const moveFile = (fileId, folderId) => {
   } catch (error) {}
 };
 
-export { moveFile };
+export const driveUtils = { moveFile, getDriveData };

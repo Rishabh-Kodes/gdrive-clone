@@ -28,6 +28,7 @@ const Layout = (props) => {
       {props.data.files && (
         <FilesSection
           files={props.data.files.filter((item) => item.location === location)}
+          location={location}
         />
       )}
     </>
