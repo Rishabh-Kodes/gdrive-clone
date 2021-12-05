@@ -15,9 +15,11 @@ const FolderSection = (props) => {
 
   const handelCreate = () => {
     setShowCreateFolder(false);
-    dispatch(
-      fileActions.createFolder({ name: folderName, _id: props.location })
-    );
+    if (folderName !== "") {
+      dispatch(
+        fileActions.createFolder({ name: folderName, _id: props.location })
+      );
+    }
     setFolderName("");
   };
 
